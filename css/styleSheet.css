@@ -1,0 +1,347 @@
+		
+		
+		::-webkit-scrollbar {
+			width: 12px;
+		}
+		 
+		::-webkit-scrollbar-track {
+			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+			border-radius: 10px;
+		}
+		 
+		::-webkit-scrollbar-thumb {
+			border-radius: 10px;
+			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+		}
+		
+		table{
+			width: 100%;
+		}
+		
+		th, td {
+		  width: 25%;
+		  text-align: left;
+		  border: 1px solid #000;
+		}
+
+		body {
+			background-image: url("../images/little_christmas-wallpaper-1366x768.jpg");
+			background-repeat:repeat;
+			background-position-x: center; 
+			background-attachment: fixed;
+			float:center;
+			width: 900px; 
+			margin: 0 auto; 
+			width: 886px;
+			
+		}
+		section{
+			-webkit-box-orient:horizontal;
+			width: 883px;
+		}
+		article{
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 1)', endColorstr='rgba(255, 255, 255, 0)', GradientType=1);
+			padding: 2rem 0;
+			float:left;
+			-webkit-box-orient: vertical;
+			width:55%;
+		}
+		
+		
+		.rightAside{
+			-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255, 255, 255, 1)), to(rgba(255, 255, 255, 0)));
+			background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -o-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-repeat: repeat-x;
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 1)', endColorstr='rgba(255, 255, 255, 0)', GradientType=1);
+			padding: 2rem 0;
+			float: right;
+			-webkit-box-orient: vertical;
+			width:40%;
+			border-left: 2px #CCC solid;
+			border-right: 2px #ccc solid;
+			margin-top:10px;
+			margin-bottom:10px;
+			padding:10px;
+			
+		}
+
+		.speakerIndividual{
+			-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255, 255, 255, 1)), to(rgba(255, 255, 255, 0)));
+			background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -o-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-repeat: repeat-x;
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 1)', endColorstr='rgba(255, 255, 255, 0)', GradientType=1);
+			padding: 2rem 0;
+			float:left;
+			-webkit-box-orient: horizontal;
+			width: 100%
+		}
+		
+		.speakerImage{
+			float:left;
+			width:40%;
+		}
+		
+		.speakerCaption{
+			-webkit-box-orient: vertical;
+			float:right;
+			width: 60%;
+		}
+		
+		.EventDetails{
+			border-bottom: 2px #CCC solid;
+		}
+	
+		.Registration{
+			-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255, 255, 255, 1)), to(rgba(255, 255, 255, 0)));
+			background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -o-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-repeat: repeat-x;
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 1)', endColorstr='rgba(255, 255, 255, 0)', GradientType=1);
+			padding: 2rem 0;
+			padding: 10px;
+			border-bottom: 2px #CCC solid;
+		}
+		
+		.chartHeader{
+			text-align: center;
+			font-size: 150%;
+		}
+		
+		.Presentations{
+			-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255, 255, 255, 1)), to(rgba(255, 255, 255, 0)));
+			background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -o-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-repeat: repeat-x;
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 1)', endColorstr='rgba(255, 255, 255, 0)', GradientType=1);
+			padding: 2rem 0;
+			padding: 10px;
+			margin-top:10px;
+			-moz-box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 5px 20px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+		}
+	
+		h1{
+			-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255, 255, 255, 1)), to(rgba(255, 255, 255, 0)));
+			background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -o-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-repeat: repeat-x;
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 1)', endColorstr='rgba(255, 255, 255, 0)', GradientType=1);
+			padding: 2rem 0;
+		font-size:150%;
+		}
+		#top{
+		-webkit-box-orient:horizontal;
+		size:100%;
+		}
+		
+		#secretName{
+		box-sizing: border-box;
+		width:50%;
+		float: left;
+		-webkit-box-orient:vertical;
+		}
+		
+		#password{
+		box-sizing: border-box;
+		width: 50%;
+		float: right;
+		-webkit-box-orient:vertical;
+		}
+		
+		#userTable{
+		width: 100%;
+		display: inline-table;
+		background-color: #C1DAFF;
+		
+		}
+		
+		#giverTable{
+		width: 100%;
+		display: inline-table;
+		background-color:#BBFFA4;
+		
+		}
+		
+		#giftNameTable{
+			
+		 max-width:50px;
+		overflow-x:scroll;
+		text-align:center;
+		}
+		
+		#giftLocationTable{
+		max-width:70px;
+		word-wrap: break-word;
+		
+		}
+		
+		#giftControl{
+			float:center;
+			text-align:center;
+		}
+		
+		#tableRemoveButton{
+			text-align: center;
+		}
+		#adminButton{
+		text-align: center;
+		}
+		
+		#deleteGiftButton{
+		float:right;
+		}
+		#addGiftButton{
+		float:left;
+		}
+		#giftPriceTable{
+		text-align:center;
+		}
+		
+		td {
+			text-align: center;
+			width:10%;
+			
+		}
+		
+		
+		.Login{
+			-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255, 255, 255, 1)), to(rgba(255, 255, 255, 0)));
+			background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -o-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-repeat: repeat-x;
+			width: 100%;
+		}
+		
+		.news{
+			-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255, 255, 255, 1)), to(rgba(255, 255, 255, 0)));
+			background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -o-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-repeat: repeat-x;
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 1)', endColorstr='rgba(255, 255, 255, 0)', GradientType=1);
+			padding: 2rem 0;
+			padding: 10px;
+			margin-top:10px;
+			-moz-box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 5px 20px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+			max-height:300px;
+			overflow-y:scroll;
+			border: 2px #CCC solid;
+		}	
+		
+		.register{
+			-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255, 255, 255, 1)), to(rgba(255, 255, 255, 0)));
+			background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -o-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-repeat: repeat-x;
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 1)', endColorstr='rgba(255, 255, 255, 0)', GradientType=1);
+			padding: 2rem 0;
+			padding: 10px;
+			margin-top:10px;
+			-moz-box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 5px 20px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+		}
+		
+		.invalidUserBox{
+			padding: 10px;
+			margin-top:10px;
+			-moz-box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 5px 20px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+		}
+		.entry{
+			padding: 2px;
+			margin-top:2px;
+			-moz-box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 5px 20px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+		}
+		
+		.giftTolist{
+			-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255, 255, 255, 1)), to(rgba(255, 255, 255, 0)));
+			background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -o-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-repeat: repeat-x;
+			padding: 2px;
+			margin-top:10px;
+			-moz-box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 5px 20px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+		}
+		
+		.giftList{
+			-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			background-image: -moz-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -ms-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255, 255, 255, 1)), to(rgba(255, 255, 255, 0)));
+			background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: -o-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+			background-repeat: repeat-x;
+			padding: 2px;
+			margin-top:10px;
+			-moz-box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 5px 20px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+		}
+		

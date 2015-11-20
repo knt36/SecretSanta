@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Christmas- 2014: Secret Santa</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/styleSheet.css">
+  <link rel="icon" type="icon" href="images/favicon.ico">
+
+   <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+<script> 
+$(function() { // execute after dom loaded
+    $.ajax({
+        url: 'resourceLines.php'
+    }).done(function(res) {
+        // do whatever you like
+    });
+});
+</script>
+  
+  
+  <script>
+    var xmlhttp;
+    if (window.XMLHttpRequest) {
+      //code for IE7, Firefox and everything new....
+      xmlhttp = new XMLHttpRequest();
+    } else {
+      //for the old things
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+	
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        document.getElementById("mainDynamic").innerHTML = xmlhttp.responseText;
+      }
+
+    }
+
+    xmlhttp.open("GET", "resourceLines.php", true);
+    xmlhttp.send();
+  </script>
+  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+  <script type="text/javascript">
+  </script>
+  
+  
+
+</head>
+
+<body id='mainBody'>
+  <img class="Banner" src="images/Banner.JPG" alt="Banner" width="886" height="187">
+  <section>
+  
+	<div id='test'>
+	
+	
+	</div>
+    <div id='mainDynamic'>
+
+
+    </div>
+    <article class='leftSide'>
+      <div class="Presentations">
+        <h1>Important Information</h1>
+        <b>WebSite Scheme:</b>
+        <br>
+        <p>The Purpose of this is to have computer generated randomization of the "Secret Santa gifting". All wish list can be made online and will be automatically uploaded to the server. Then, I will run the program to randomly pair you then display the
+          wish list to whom you'll be a secret Santa to.</p>
+
+        <p>So things to do:
+          <p>
+            <ul>
+              <li>Make an account</li>
+              <li>Build your wish list</li>
+            </ul>
+            <p><b>WARNING</b>: It is important that you make only ONE! account for yourself.
+              <p>
+
+                <p>
+                  <b>Gifting Criteria:</b>
+                  <br>
+
+                  <ul>
+                    <li><b>Amount of Gifts-</b> Each person should have at least 3 gifts for the gift-er to chose from</li>
+                    <li><b>Price of Total Gifts-</b> $50</li>
+                    <li>Total Amount of gifts you buy for the person must be close to equal or more than $50</li>
+                  </ul>
+                  <br>
+                  <b>Commonly Asked Questions</b>
+                  <ul>
+                    <li>Can we list multiple gifts on our wish list to add up to the <b>MAX</b> dollar amount? Yes, if there are multiple low priced items, you will have to chose to buy enough gifts to add up to the total amount.</li>
+                  </ul>
+                </p>
+      </div>
+    </article>
+  </section>
+</body>
+
+</html>
