@@ -11,7 +11,7 @@ print("
 					<b>Date:</b> December 20 2015 <br>
 					<b>Time:</b> 12:00 pm <br>
 					<b>Place:</b> Laura's Suspicious Cavern <br>
-					<b>WISH LIST DUE DATE:<br>November 30, 2015 , Thursday @ 11:59 PM!<br></b>
+					<b>WISH LIST DUE DATE:<br>November 30, 2015 , Monday @ 11:59 PM!<br></b>
 					<p>The List will be distributed when it is due or everyone is done.</p>
 					</p>
 	");
@@ -352,8 +352,8 @@ print("
 						<div class = 'invalidUserBox'>
 						<h1> Invalid User </h1>
 						<p> The Username or Password you have chosen is invalid... </p>
-						<p> Are You on Drugs or Something Kid?</p>
-						<p> Try again at the bottom</p>
+						<p> Make a new user or...</p>
+						<p> Think REAL HARD, what was that password...</p>
 						</div>
 					");
 		}
