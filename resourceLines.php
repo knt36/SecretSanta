@@ -165,10 +165,6 @@ print("
 					</div></div>
 					");
 					}
-					
-					
-				
-					
 			} 
 			else if($_SESSION[$webName]['status'] =='invalidUser'){
 				printLogin();
