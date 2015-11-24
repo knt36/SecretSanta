@@ -8,6 +8,7 @@
 		$lastName = ($_GET["lastName"]);
 		$secretName = ($_GET["secretName"]);
 		$password= ($_GET["password"]);
+		$sex = ($_GET["sex"]);
 		//Test Variables mysql_real_escape_string
 		
 		// print($firstName."<br>");
@@ -25,7 +26,7 @@
 				  echo "Failed to connect to MySQL: " . mysqli_connect_error();
 				  }
 				else {
-						$query="INSERT INTO secretSanta (`firstName`, `lastName`, `secretName`, `password`) VALUES ('$firstName', '$lastName', '$secretName', '$password');";
+						$query="INSERT INTO secretSanta (`firstName`, `lastName`, `secretName`, `password`, `sex`) VALUES ('$firstName', '$lastName', '$secretName', '$password', '$sex');";
 						$result = mysqli_query($con, $query);
 						$_SESSION[$webName]['status'] = 'authorized';
 				}

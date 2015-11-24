@@ -35,8 +35,8 @@
 				print("Failed, There is a dead lock<br>");
 				
 				//resets the list
-				//$result = mysqli_query($con,"UPDATE secretSanta SET giverAssigned = -1");
-				//passList($con);
+				$result = mysqli_query($con,"UPDATE secretSanta SET giverAssigned = -1");
+				passList($con);
 				//header("location: passList.php"); 
 			}
 			else{

@@ -373,6 +373,11 @@ print("
 							<div id='lastName'>
 							<b>Real</b> Last Name : <br> <input type = 'text' name ='lastName' size ='25%' required >
 							</div>
+							<div id = 'sex'>
+							<b>Your Sexual Identification</b><br>
+							  <input type='radio' name='sex' value='male' checked><b>Male</b>
+							  <input type='radio' name='sex' value='female'><b>Female</b>
+							</div>
 							<p>Enter your Secret Santa Code Name -this will be your login to the site and how people will identify you anonymously. <br>  <b>Login with your credentials after registration to Build your wish list.</b></p>
 							<div id='secretName'>
 							Secret Login Name! : <br> <input type = 'text' name ='secretName' size ='25%' required >
@@ -388,7 +393,6 @@ print("
 							</div>
 						</form>
 						</div>
-					
 						");
 				}
 		
