@@ -8,10 +8,10 @@ print("
 			<div class='EventDetails'>
 				<h1>Event Details</h1>
 					<p>
-					<b>Date:</b> December 18 2014 <br>
+					<b>Date:</b> December 20 2015 <br>
 					<b>Time:</b> 12:00 pm <br>
-					<b>Place:</b> Susan's Humble Abode <br>
-					<b>WISH LIST DUE DATE:<br>November 27, 2014 , Thursday @ 10 PM!<br></b>
+					<b>Place:</b> Laura's Suspicious Cavern <br>
+					<b>WISH LIST DUE DATE:<br>November 30, 2015 , Thursday @ 11:59 PM!<br></b>
 					<p>The List will be distributed when it is due or everyone is done.</p>
 					</p>
 	");
@@ -23,15 +23,13 @@ print("
 					<p>News Information  :</b></p> <input type = 'text'  name ='news' style = 'float = right;' size ='20%' >
 					<input type='submit' id = 'newsAddButton'  value = 'BroadCast!' required>
 					</form>
-					</div>
-		");
+					</div>");
 		}
 		print("
 				</div>
 			</aside>
 			");
 			
-
 //DYNAMIC BOX
 			print("<article>");
 			if ($_SESSION[$webName]['status'] == 'loggedIn') {
