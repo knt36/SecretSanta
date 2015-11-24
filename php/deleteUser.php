@@ -2,10 +2,11 @@
 	include_once("config.php");
 	session_start();
 	$id = $_GET["idRemove"];
-	
-	
+	print("ID TO REMOVE " . $id);
+	mysqli_query($con,"SET SQL_SAFE_UPDATES = 0");
 	mysqli_query($con,"DELETE FROM secretSanta WHERE idsecretSanta = $id"); 	
 	mysqli_query($con,"DELETE FROM gift WHERE giftId = $id"); 	
+	mysqli_query($con,"SET SQL_SAFE_UPDATES = 1");
 	if($_SESSION[$webName]['authority'] != 1){
 	if(isset($_SESSION[$webName]['status'])){
 	  unset($_SESSION[$webName]['status']);
@@ -36,6 +37,6 @@
 		session_destroy();
 	}
 	
-	header("location: ../index.html"); 
+	//header("location: ../index.html"); 
 
 ?>

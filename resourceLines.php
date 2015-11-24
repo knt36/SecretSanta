@@ -11,7 +11,7 @@ print("
 					<b>Date:</b> December 20 2015 <br>
 					<b>Time:</b> 12:00 pm <br>
 					<b>Place:</b> Laura's Suspicious Cavern <br>
-					<b>WISH LIST DUE DATE:<br>November 30, 2015 , Monday @ 11:59 PM!<br></b>
+					<b>WISH LIST DUE DATE:<br>November 29, 2015 , Sunday @ Noon!<br></b>
 					<p>The List will be distributed when it is due or everyone is done.</p>
 					</p>
 	");
@@ -150,12 +150,6 @@ print("
 					</div>
 					");
 					}
-					
-					// print("
-					// <form action='php/doneList.php' method='get'>
-						// <input type='submit' style='float:right;' value = 'I am finished' ID ='button' required>
-						// <input type='hidden' name ='id' value = '$_SESSION[idsecretSanta]'  required>
-					// </form>");
 					
 					if($_SESSION[$webName]['authority']==1){
 						print("
@@ -317,6 +311,9 @@ print("
 		print("	<h1 style='text-align:center;'> Welcome Back " . $firstName . "!</h1>
 					");
 		}
+		
+		
+		//Session variables do not get passed into functions, must be passed through parameter.
 		function printLogout($con,$idUser){
 			print("
 				<div class = 'Logout'>
@@ -328,7 +325,7 @@ print("
 			$row = mysqli_fetch_array($result);
 			if($row[giverAssigned]<0){
 			print("<form action='php/deleteUser.php' style ='display: inline-block;float:left' method='get'>
-					<input type = 'hidden'  name = 'idRemove' value = '$_SESSION[idsecretSanta]' size ='0%' required >
+					<input type = 'hidden'  name = 'idRemove' value = '" . $idUser . "' size ='0%' required >
 					<input type='submit' value ='Delete Account' required>
 					</form>
 					");
@@ -361,7 +358,7 @@ print("
 		function printRegister(){
 			print("
 			<div class = 'register'>
-				<h1> REGISTER! We have Cookies!</h1>
+				<h1> REGISTER! Out of Cookies, Anywhale...</h1>
 						<form action='php/formHandler.php' method='get'>
 							<div id='top'>
 							<p>Please enter your first and last name and is used to tell who is coming to the event --this will not be known to the administrator participating</p>
@@ -376,7 +373,7 @@ print("
 							  <input type='radio' name='sex' value='male' checked><b>Male</b>
 							  <input type='radio' name='sex' value='female'><b>Female</b>
 							</div>
-							<p>Enter your Secret Santa Code Name -this will be your login to the site and how people will identify you anonymously. <br>  <b>Login with your credentials after registration to Build your wish list.</b></p>
+							<p>Enter your Secret Santa Name -Theme: Chocolate, a name related to this. This will be your login to the site and how people will identify you anonymously. <br>  <b>Login with your credentials after registration to Build your wish list.</b></p>
 							<div id='secretName'>
 							Secret Login Name! : <br> <input type = 'text' name ='secretName' size ='25%' required >
 							</div>
