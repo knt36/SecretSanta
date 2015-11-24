@@ -16,9 +16,15 @@
 	//CONSTANTS
 	$wishRequirement = 3;
 	$maxAvatars = 6;
-	$webName = 'secretSanta';
+	$webName = 'SAMPLEsecretSanta';
 	//Controls
 	$adminGiftChange = false;
+	
+	//DEBUGGER
+	$DEBUG = true;
+	
+	//Notes
+	//The Each user has a gift number that is incremented after everytime a gift is added. The number of gifts is not determined dynamically by the number that is in the list.
 	
 	//Functions
 		

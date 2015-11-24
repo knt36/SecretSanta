@@ -7,9 +7,7 @@
 			mysqli_query($con,"SET SQL_SAFE_UPDATES = 0");
 			$result = mysqli_query($con,"DELETE  FROM gift WHERE giftId = $ID AND id = $idGift");
 			mysqli_query($con,"SET SQL_SAFE_UPDATES = 1");
-			if($count<$wishRequirement){
-			mysqli_query($con,"UPDATE secretSanta SET wishReq = 0 WHERE idsecretSanta = $ID");
-			}
+			
 			if($result>0){
 				mysqli_query($con,"UPDATE secretSanta SET numGifts = numGifts-1 WHERE idsecretSanta = $ID");
 			}
