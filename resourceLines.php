@@ -203,13 +203,16 @@ print("
 
 			while($row = mysqli_fetch_array($results)){
 			//if done gift requirement then you get an avatar
+			$giftReq = 'No';
+			$image = "images/userIconNot.png";
+			$size = "height = '128px' width = '128px'";
 			if($row[giftReq]==1){
 				$giftReq = 'Yes';
 				$image = "images/userIcon.png";
 				$size = "height = '128px' width = '128px'";
 					if($row['avatar']==1){
-					$size = "height = '170px' width = '128px'";
-					$image = "images/admin.png";
+					$size = "height = '140px' width = '128px'";
+					$image = "images/admin1.png";
 					}
 					else if ($row['avatar'] == 2){
 						$size = "height = '170px' width = '128px'";
@@ -236,12 +239,6 @@ print("
 						$image = 'images/userIcon.png';
 					}
 			}
-			else {
-				$giftReq = 'No';
-				$image = "images/userIconNot.png";
-				$size = "height = '128px' width = '128px'";
-			}
-			
 			print("
 				<div class= 'speakerIndividual'>
 						<div class= 'speakerImage'>

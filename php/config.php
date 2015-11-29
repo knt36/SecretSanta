@@ -16,7 +16,7 @@
 	//CONSTANTS
 	$wishRequirement = 3;
 	$maxAvatars = 6;
-	$webName = 'SAMPLEsecretSanta';
+	$webName = 'STAsecretSanta';
 	//Controls
 	$adminGiftChange = false;
 	
