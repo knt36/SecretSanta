@@ -66,7 +66,9 @@ print("
 					print("<tr><td id = 'giftNameTable'>  ");
 					print($row[giftName]);
 					print("  </td><td id = 'giftLocationTable'>  ");
+					print("<a target=\"_blank\" href=\"");
 					print($row[giftLocation]);
+					print("\">link</a>");
 					print("  </td><td id = 'giftPriceTable'>  ");
 					print($row[giftPrice]);
 					print("  </td><td id = 'giftNotetable'>  ");
@@ -96,7 +98,9 @@ print("
 					print("<tr><td id = 'giftNameTable'>  ");
 					print($row[giftName]);
 					print("  </td><td id = 'giftLocationTable'>  ");
+					print("<a target=\"_blank\" href=\"");
 					print($row[giftLocation]);
+					print("\">link</a>");
 					print("  </td><td id = 'giftPriceTable'>  ");
 					print($row[giftPrice]);
 					print("  </td><td id = 'giftNotetable'>  ");
