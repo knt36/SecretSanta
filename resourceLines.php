@@ -293,7 +293,7 @@ print("
 			<div class = 'news'>
 			");
 		
-		$results = mysqli_query($con,"SELECT * FROM secretSanta.news ORDER BY id DESC;");
+		$results = mysqli_query($con,"SELECT * FROM news ORDER BY id DESC;");
 		while($value = mysqli_fetch_array($results)){
 			print("<div class='entry'>
 			<p><b><u>" . $value[title] . "</u></b>-");
