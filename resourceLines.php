@@ -66,9 +66,13 @@ print("
 					print("<tr><td id = 'giftNameTable'>  ");
 					print($row[giftName]);
 					print("  </td><td id = 'giftLocationTable'>  ");
-					print("<a target=\"_blank\" href=\"");
-					print($row[giftLocation]);
-					print("\">link</a>");
+					if (!filter_var($row[giftLocation], FILTER_VALIDATE_URL) === false) {
+						print("<a target=\"_blank\" href=\"");
+						print($row[giftLocation]);
+						print("\">link</a>");
+					} else {
+						print($row[giftLocation]);
+					}
 					print("  </td><td id = 'giftPriceTable'>  ");
 					print($row[giftPrice]);
 					print("  </td><td id = 'giftNotetable'>  ");
@@ -98,9 +102,13 @@ print("
 					print("<tr><td id = 'giftNameTable'>  ");
 					print($row[giftName]);
 					print("  </td><td id = 'giftLocationTable'>  ");
-					print("<a target=\"_blank\" href=\"");
-					print($row[giftLocation]);
-					print("\">link</a>");
+					if (!filter_var($row[giftLocation], FILTER_VALIDATE_URL) === false) {
+						print("<a target=\"_blank\" href=\"");
+						print($row[giftLocation]);
+						print("\">link</a>");
+					} else {
+						print($row[giftLocation]);
+					}
 					print("  </td><td id = 'giftPriceTable'>  ");
 					print($row[giftPrice]);
 					print("  </td><td id = 'giftNotetable'>  ");
