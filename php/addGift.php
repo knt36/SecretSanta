@@ -21,7 +21,7 @@
 			print_r($result);
 			print("Print works");
 			if($count>=$wishRequirement){
-				if($value['avatar']==0){
+				if(is_null($value['avatar'])){
 				$randNum = rand(1,$maxAvatars);
 					mysqli_query($con,"UPDATE secretSanta SET avatar = $randNum WHERE idsecretSanta = $ID");
 				}

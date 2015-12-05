@@ -210,9 +210,9 @@ print("
 				$giftReq = 'Yes';
 				$image = "images/userIcon.png";
 				$size = "height = '128px' width = '128px'";
-					if($row['avatar']==1){
-					$size = "height = '140px' width = '128px'";
-					$image = "images/admin1.png";
+					if ($row['avatar'] == 1){
+						$size = "height = '170px' width = '128px'";
+						$image = "images/avatars/1.png";
 					}
 					else if ($row['avatar'] == 2){
 						$size = "height = '170px' width = '128px'";
@@ -234,9 +234,13 @@ print("
 						$image = "images/panda.png";
 						$size = "height = '128px' width = '128px'";
 					}
-					else { //if the value is 0 or anything else non-existent
+					else if (is_null($row['avatar'])){
+						$image = "images/userIcon.png";
 						$size = "height = '128px' width = '128px'";
-						$image = 'images/userIcon.png';
+					}
+					else { //if the value is 0 or anything else non-existent
+						$size = "height = '140px' width = '128px'";
+						$image = "images/avatars/". $row['avatar']  .".png";
 					}
 			}
 			print("
