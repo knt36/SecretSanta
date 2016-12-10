@@ -8,10 +8,10 @@ print("
 			<div class='EventDetails'>
 				<h1>Event Details</h1>
 					<p>
-					<b>Date:</b> December 20 2015 <br>
-					<b>Time:</b> 12:00 pm <br>
-					<b>Place:</b> Laura's Suspicious Cavern <br>
-					<b>WISH LIST DUE DATE:<br>November 29, 2015 , Sunday @ Noon!<br></b>
+					<b>Date:</b> December 18 2016: SUNDAY  <br>
+					<b>Time:</b> 2:00pm <br>
+					<b>Place:</b> Khoi 's Home <br>
+					<b>WISH LIST DUE DATE:<br>December 8, 2016 -One day extension<br></b>
 					<p>The List will be distributed when it is due or everyone is done.</p>
 					</p>
 	");
@@ -38,10 +38,12 @@ print("
 			printLogout($con,$idUser);
 			$firstName = $_SESSION[$webName]['firstName'];
 			printUserLoggedIn($firstName);
+			printSecretPictureConfig($con,$idUser);
 			
 			if($_SESSION[$webName]['authority']==1){
 				printNews($con,$_SESSION[$webName]['authority']);
 			}
+			
 			//Giver's list to Give
 				$result = mysqli_query($con," SELECT giverAssigned FROM secretSanta WHERE idsecretSanta = $idUser");
 				$row = mysqli_fetch_array($result);
@@ -204,44 +206,13 @@ print("
 			while($row = mysqli_fetch_array($results)){
 			//if done gift requirement then you get an avatar
 			$giftReq = 'No';
-			$image = "images/userIconNot.png";
+			$image = $row['avatar'];
+			if(is_null($image)){
+				$image = "images/avatars/userIcon.png";
+			}
 			$size = "height = '128px' width = '128px'";
 			if($row[giftReq]==1){
 				$giftReq = 'Yes';
-				$image = "images/userIcon.png";
-				$size = "height = '128px' width = '128px'";
-					if ($row['avatar'] == 1){
-						$size = "height = '170px' width = '128px'";
-						$image = "images/avatars/1.png";
-					}
-					else if ($row['avatar'] == 2){
-						$size = "height = '170px' width = '128px'";
-						$image = "images/elsa.png";
-					}
-					else if ($row['avatar'] == 3){
-						$image = "images/rainbowUser.png";
-						$size = "height = '128px' width = '128px'";
-					}
-					else if ($row['avatar'] == 4){
-						$image = "images/pheonixUser.png";
-						$size = "height = '128px' width = '128px'";
-					}
-					else if ($row['avatar'] == 5){
-						$image = "images/ninjaUser.png";
-						$size = "height = '128px' width = '128px'";
-					}
-					else if ($row['avatar'] == 6){
-						$image = "images/panda.png";
-						$size = "height = '128px' width = '128px'";
-					}
-					else if (is_null($row['avatar'])){
-						$image = "images/userIcon.png";
-						$size = "height = '128px' width = '128px'";
-					}
-					else { //if the value is 0 or anything else non-existent
-						$size = "height = '140px' width = '128px'";
-						$image = "images/avatars/". $row['avatar']  .".png";
-					}
 			}
 			print("
 				<div class= 'speakerIndividual'>
@@ -250,8 +221,6 @@ print("
 						</div>
 						<div class='speakerCaption'>
 							");
-							
-					
 			if($_SESSION[$webName]['authority']==1){
 				print("<form action='php/deleteUser.php' style ='float:right;' method='get'>
 					<input type = 'hidden'  name = 'idRemove' value = '$row[idsecretSanta]' size ='0%' required >
@@ -285,12 +254,57 @@ print("
 					<b>$row[firstName]  $row[lastName]</b><br>
 					Has Enough Gifts? <b>{$giftReq}</b>
 					</div>
+					
 					</div>
 				");
+			if($row['idsecretSanta']==$_SESSION[$webName]['idsecretSanta']){
+				print("
+				<form action='php/upload.php' method='post' enctype='multipart/form-data'>
+					<b>Select file and upload to change user picture:</b>
+					<input type='file' name='fileToUpload' id='fileToUpload'>
+					<input type='submit' value='Upload Image' name='submit'>
+				</form>
+							");
+			}
 			}
 		
 		print("</aside>");
 
+		function printSecretPictureConfig($con,$idUser){
+		print("
+			</div>
+			");
+			$result = mysqli_query($con,"SELECT * FROM secretSanta WHERE idsecretSanta = '$idUser';");
+			$size = "height = '128px' width = '128px'";
+			$image = "";
+			$bioCaption = "";
+			while($row = mysqli_fetch_array($result)){
+				$image = $row['secretAvatar'];
+				$bioCaption = $row['bio'];
+			}
+			print("
+				<div class = 'news'>
+					<div class ='secretPicture' style='width:30%;float:left;'>
+					<img src = '$image' $size>
+					</div>
+					<div class = 'secretCaption' style='width:70%;float:right'>
+					<b> Brief caption </b><br>
+					<textarea id = 'bioCaption' rows='4' style='width:100%;'>"
+					. $bioCaption .
+					"</textarea>
+					<button onclick = 'updateCaption()'>Update caption</button>
+					</div>
+					<div style='float:left'>
+					<form action='php/uploadSecretAvatar.php' method='post' enctype='multipart/form-data'>
+					<b>Select file and upload to change secret picture:</b>
+					<input type='file' name='fileToUpload' id='fileToUpload'>
+					<input type='submit' value='Upload Image' name='submit'>
+					</form>
+					</div>
+				</div>
+				
+			");
+		}
 		function printNews($con,$authority){
 		print("
 			<h1 style = 'text-align:center';><b> News!</b></h1>
@@ -367,7 +381,7 @@ print("
 		function printRegister(){
 			print("
 			<div class = 'register'>
-				<h1> REGISTER! Out of Cookies, Anywhale...</h1>
+				<h1> REGISTER! Yearly Theme: Puppies!</h1>
 						<form action='php/formHandler.php' method='get'>
 							<div id='top'>
 							<p>Please enter your first and last name and is used to tell who is coming to the event --this will not be known to the administrator participating</p>
@@ -382,15 +396,14 @@ print("
 							  <input type='radio' name='sex' value='male' checked><b>Male</b>
 							  <input type='radio' name='sex' value='female'><b>Female</b>
 							</div>
-							<p>Enter your Secret Santa Name -Theme: Chocolate, a name related to this. This will be your login to the site and how people will identify you anonymously. <br>  <b>Login with your credentials after registration to Build your wish list.</b></p>
+							<p>Enter your Secret Santa Name -Theme: Puppies, a name related to this. This will be your login to the site and how people will identify you anonymously. <br>  <b>Login with your credentials after registration to Build your wish list and choose a Secret Puppy Avatar!</b></p>
 							<div id='secretName'>
 							Secret Login Name! : <br> <input type = 'text' name ='secretName' size ='25%' required >
 							</div>
 							<div id ='password'>
 							Password: <br> <input type='text' name ='password' size ='25.5%' required>
 							</div>
-							</div>
-							
+							</div>					
 							<div style ='text-align:right;'>
 							<input type='submit' value = 'Register' ID ='button' required>
 							</div>

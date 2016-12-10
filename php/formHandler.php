@@ -11,10 +11,12 @@
 		$sex = ($_GET["sex"]);
 		//Test Variables mysql_real_escape_string
 		
-		// print($firstName."<br>");
-		// print($lastName."<br>");
-		 //print($secretName."<br>");
-		 //print($password."<br>");
+		 print($firstName."<br>");
+		 print($lastName."<br>");
+		 print($secretName."<br>");
+		 print($password."<br>");
+		 print($DEFAULT_AVATAR."<br>");
+		 print($DEFAULT_SECRETAVATAR."<br>");
 		
 		$time_stamp = strtotime("now");
 		$ACode = rand();
@@ -26,14 +28,14 @@
 				  echo "Failed to connect to MySQL: " . mysqli_connect_error();
 				  }
 				else {
+						echo "Connection Success";
 						$query="INSERT INTO secretSanta (`firstName`, `lastName`, `secretName`, `password`, `sex`) VALUES ('$firstName', '$lastName', '$secretName', '$password', '$sex');";
 						$result = mysqli_query($con, $query);
 						$_SESSION[$webName]['status'] = 'authorized';
+						var_dump($result);
+						echo "ran";
 				}
-
-
-					
-					header("location: ../index.html"); 
+				header("location: ../index.html"); 
 			
 					
 

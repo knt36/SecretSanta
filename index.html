@@ -6,8 +6,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="css/styleSheet.css">
   <link rel="icon" type="icon" href="images/favicon.ico">
-
-   <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
 <script> 
 $(function() { // execute after dom loaded
     $.ajax({
@@ -16,6 +15,35 @@ $(function() { // execute after dom loaded
         // do whatever you like
     });
 });
+
+function updateCaption(){
+var textCaption = document.getElementById("bioCaption").value;
+	post('php/updateCaption.php', {bio: textCaption});
+}
+
+function post(path, params, method) {
+    method = method || "post"; // Set method to post by default if not specified.
+
+    // The rest of this code assumes you are not using a library.
+    // It can be made less wordy if you use one.
+    var form = document.createElement("form");
+    form.setAttribute("method", method);
+    form.setAttribute("action", path);
+
+    for(var key in params) {
+        if(params.hasOwnProperty(key)) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+			
+            form.appendChild(hiddenField);
+         }
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+}
 </script>
   
   

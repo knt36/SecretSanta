@@ -1,4 +1,20 @@
 		
+		.secretPictureConfig{
+			-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			background-color: #fff;
+			background-color: rgba(255,255,255,0.6);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 1)', endColorstr='rgba(255, 255, 255, 0)', GradientType=1);
+			padding: 2rem 0;
+			padding: 10px;
+			margin-top:10px;
+			-moz-box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 5px 20px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+			max-height:300px;
+			overflow-y:scroll;
+			border: 2px #CCC solid;
+		}
 		
 		::-webkit-scrollbar {
 			width: 12px;
@@ -25,7 +41,7 @@
 		}
 
 		body {
-			background-image: url("../images/little_christmas-wallpaper-1366x768.jpg");
+			background-image: url("../images/grey.jpg");
 			background-repeat:repeat;
 			background-position-x: center; 
 			background-attachment: fixed;
