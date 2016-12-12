@@ -2,17 +2,23 @@
 <html>
 
 <head>
-  <title>Christmas- 2014: Secret Santa</title>
+  <title>Christmas- 2016: Secret Santa</title>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/styleSheet.css">
   <link rel="icon" type="icon" href="images/favicon.ico">
-  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
-<script> 
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <script> 
 $(function() { // execute after dom loaded
     $.ajax({
         url: 'resourceLines.php'
     }).done(function(res) {
         // do whatever you like
+		
     });
 });
 
@@ -20,6 +26,8 @@ function updateCaption(){
 var textCaption = document.getElementById("bioCaption").value;
 	post('php/updateCaption.php', {bio: textCaption});
 }
+
+
 
 function post(path, params, method) {
     method = method || "post"; // Set method to post by default if not specified.
@@ -48,6 +56,14 @@ function post(path, params, method) {
   
   
   <script>
+	//SELECTED SECRETAVATAR
+	var selectedAvatar = -1;
+	var lastSelected = null;
+	
+	function selectSecretAvatar(){
+		post('php/selectSecretAvatar.php', {selectedSecretAvatar: selectedAvatar});
+	}
+
     var xmlhttp;
     if (window.XMLHttpRequest) {
       //code for IE7, Firefox and everything new....
@@ -60,15 +76,50 @@ function post(path, params, method) {
 	
       if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         document.getElementById("mainDynamic").innerHTML = xmlhttp.responseText;
+           
+			$(document).ready(function() {
+            $(".secretAvatar").mouseover(function(){
+				var reading = $(this).attr("alt");
+				if(reading != 'taken'){
+				 $(this).css({"border-color": "#C1E0FF", 
+				 "border-width":"15px", 
+				 "border-style":"solid"});
+				}
+            });
+			
+			$(".secretAvatar").mouseleave(function(){
+			   if(lastSelected==null||this !== lastSelected.get(0)){
+				   $(this).css({"border-color": "#C1E0FF", 
+					 "border-width":"0px", 
+					 "border-style":"solid"});
+				}
+			  
+            });
+			
+			
+			$(".secretAvatar").click(function(){
+				var reading = $(this).attr("alt");
+				if(reading != 'taken'){
+					selectedAvatar = $(this).attr("alt");
+					if(lastSelected !=null){
+						lastSelected.css({"border-color": "#C1E0FF", 
+					 "border-width":"0px", 
+					 "border-style":"solid"});
+					}
+					$(this).css({"border-color": "#C1E0FF", 
+					 "border-width":"15px", 
+					 "border-style":"solid"});
+					lastSelected = $(this);
+				}
+			});
+        });
+		   
       }
 
     }
 
     xmlhttp.open("GET", "resourceLines.php", true);
     xmlhttp.send();
-  </script>
-  <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
-  <script type="text/javascript">
   </script>
   
   
@@ -79,13 +130,10 @@ function post(path, params, method) {
   <img class="Banner" src="images/2SecretSantaBanner2015.jpg" alt="Banner" width="886" height="187">
   <section>
   
-	<div id='test'>
-	
-	
+	<div class = '' id='test'>
 	</div>
     <div id='mainDynamic'>
-
-
+	
     </div>
     <article class='leftSide'>
       <div class="Presentations">

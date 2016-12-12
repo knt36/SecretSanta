@@ -1,9 +1,8 @@
 <?php
-
 	define(DB_HOST, "127.0.0.1");
 	define(DB_USER, "root");
 	define(DB_PASSWORD, "48384d4e34Fgonehome!pz3vex");
-	define(DB_DATABASE, "secretSanta");
+	define(DB_DATABASE, "testSecretSanta");
 	 $con = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_DATABASE);
 	
 	if (mysqli_connect_errno())
@@ -16,9 +15,10 @@
 	//CONSTANTS
 	$wishRequirement = 3;
 	$maxAvatars = 6;
-	$webName = 'STAsecretSanta';
+	$webName = 'STAsecretSantaTest';
 	$DEFAULT_AVATAR = 'images/userIcon.png';
 	$DEFAULT_SECRETAVATAR = 'images/userIcon.png';
+	$RELEASE_SECRET_AVATARS = true;
 	//Controls
 	$adminGiftChange = false;
 	

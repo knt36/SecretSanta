@@ -243,6 +243,24 @@
 			width: 100%;
 		}
 		
+		.secretAvatars{
+			-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+			background-color: #fff;
+			background-color: rgba(255,255,255,0.6);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 1)', endColorstr='rgba(255, 255, 255, 0)', GradientType=1);
+			padding: 2rem 0;
+			padding: 10px;
+			margin-top:10px;
+			-moz-box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+			-webkit-box-shadow: 1px 5px 20px rgba(0,0,0,.5);
+			box-shadow: 1px 2px 20px rgba(0,0,0,.5);
+			max-width:100%;
+			width:100%;
+			overflow-x:scroll;
+			border: 2px #CCC solid;
+		}
+		
 		.news{
 			-moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
 			-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
