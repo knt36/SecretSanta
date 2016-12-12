@@ -2,11 +2,9 @@
 session_start();
 include_once("php/config.php");
 //SECRETAVATAR SELECTION
-print("<div style='width:100%;'>");
 if($RELEASE_SECRET_AVATARS&&$_SESSION[$webName]['status']=='loggedIn'){
 	printSecretAvatarSelection($con);
 }
-print("</div>");
 
 //SELECTION MENU
 
@@ -55,14 +53,6 @@ print("</div>");
 	print("<aside class = 'rightAside'>");
 	printSpeakers($con, $_SESSION[$webName]['authority'], $_SESSION[$webName]['idsecretSanta']);
 	print("</aside>");
-
-		
-		
-		
-		
-		
-		
-		
 		function printSecretPictureConfig($con,$idUser){
 		print("
 			</div>
@@ -236,7 +226,7 @@ print("</div>");
 				$result = mysqli_query($con," SELECT giverAssigned FROM secretSanta WHERE idsecretSanta = $idUser");
 				$row = mysqli_fetch_array($result);
 				//Giver has been assigned
-				$giverAssigned = $row[giverAssigned];
+				$giverAssigned = $row['giverAssigned'];
 				if($giverAssigned !=-1){
 				$result = mysqli_query($con,"SELECT giftName, giftPrice, giftNote, giftLocation,id FROM gift WHERE giftId = $giverAssigned");
 				$resultName = mysqli_query($con,"SELECT secretName FROM secretSanta WHERE idsecretSanta = $giverAssigned"); 
@@ -276,6 +266,10 @@ print("</div>");
 		}
 		
 		function printUserWishList($con, $idUser){
+			$result = mysqli_query($con," SELECT giverAssigned FROM secretSanta WHERE idsecretSanta = $idUser");
+				$row = mysqli_fetch_array($result);
+				//Giver has been assigned
+				$giverAssigned = $row['giverAssigned'];
 			print("<div class = 'giftList'><p class = 'chartHeader'>This is your <b>Christmas Wish List</b></p><p style = 'text-align:center;'>Complete your wish list to be rewarded a new avatar!</p>");
 				print("
 					<div id = 'userTable'>
@@ -322,6 +316,7 @@ print("</div>");
 					
 					
 					//The controls
+					
 					if($giverAssigned ==-1 || $adminGiftChange){
 					print("<p style='text-align:center;'><b><u>Add Gift</u></b></p>");
 					print("
@@ -446,12 +441,12 @@ print("</div>");
 		}
 		
 		function printSecretAvatarSelection($con){
-			$results = mysqli_query($con,"SELECT * FROM secretSanta");
+			$results = mysqli_query($con,"SELECT * FROM secretSanta ORDER BY secretName ASC");
 			
-			print("<div>");
-			print("<h1 style='text-align:center;'><b>Select Who Will You Gift?</b><br></h1>");
-			print("<div class = 'secretAvatars' style = 'text-align:center;'>");
+			print("<h1 style='text-align:center;'><b>Select Who Will You Gift?</b></h1>");
+			print("<div class = 'secretAvatars' style = 'width:100%;text-align:center;'>");
 			while($row = mysqli_fetch_array($results)){
+				if($row['giftReq']==1){
 				$status = "";
 				$takenTag = "";
 				$idOfPicture = $row[idsecretSanta];
@@ -461,12 +456,13 @@ print("</div>");
 				if(!$results2->num_rows == 0){
 					$status = "<b>TAKEN</b><br>";
 					$takenTag = "taken";
+				}else {
+					$takenTag = $idOfPicture;
 				}
 				$image = $row['secretAvatar'];
-				if(!is_null($image) && $image != ""){
+				
 					print("
-					<div class ='secretAvatarSlide'>
-					<div class='thumbnail' style='width:15%;float:left;'>
+					<div class='thumbnail' style='float:left;height:300px;width:15%;'>
 						<div class='caption'>
 						  <p>" . "<b>" . $row['secretName'] . "</b>"."</p>
 						</div>
@@ -474,10 +470,13 @@ print("</div>");
 						<div class='caption' style = 'overflow-y:scroll; max-height:50px;'>
 						  <p>" . $status . $row['bio'] ."</p>
 						</div>
-					</div></div>");
-				}
+					</div>
+					");
 				
+				}
 			}
+			print("</div>");
+			
 			print("</div>
 			<div style = 'text-align:center;'>
 					<button onclick = selectSecretAvatar() style='text-align:center;' id = 'acceptSecretAvatar'> Accept Selection </button>
