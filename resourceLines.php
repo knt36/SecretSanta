@@ -3,7 +3,7 @@ session_start();
 include_once("php/config.php");
 //SECRETAVATAR SELECTION
 if($RELEASE_SECRET_AVATARS&&$_SESSION[$webName]['status']=='loggedIn'){
-	printSecretAvatarSelection($con);
+	printSecretAvatarSelection($con, $_SESSION[$webName]['idsecretSanta']);
 }
 
 //SELECTION MENU
@@ -440,7 +440,7 @@ if($RELEASE_SECRET_AVATARS&&$_SESSION[$webName]['status']=='loggedIn'){
 			}
 		}
 		
-		function printSecretAvatarSelection($con){
+		function printSecretAvatarSelection($con, $userId){
 			$results = mysqli_query($con,"SELECT * FROM secretSanta ORDER BY secretName ASC");
 			
 			print("<h1 style='text-align:center;'><b>Select Who Will You Gift?</b></h1>");
@@ -462,12 +462,12 @@ if($RELEASE_SECRET_AVATARS&&$_SESSION[$webName]['status']=='loggedIn'){
 				$image = $row['secretAvatar'];
 				
 					print("
-					<div class='thumbnail' style='float:left;height:300px;width:15%;'>
-						<div class='caption'>
+					<div class='thumbnail' style='text-align:center; overflow-y:scroll; max-height:100%; float:left;height:300px;width:20%;'>
+						<div class='caption' >
 						  <p>" . "<b>" . $row['secretName'] . "</b>"."</p>
 						</div>
 						<img class = 'secretAvatar' src='" . $image . "' alt='$takenTag' style='width:100%'>
-						<div class='caption' style = 'overflow-y:scroll; max-height:50px;'>
+						<div class='caption'>
 						  <p>" . $status . $row['bio'] ."</p>
 						</div>
 					</div>
@@ -475,13 +475,20 @@ if($RELEASE_SECRET_AVATARS&&$_SESSION[$webName]['status']=='loggedIn'){
 				
 				}
 			}
-			print("</div>");
+			print("</div></div>");
 			
-			print("</div>
-			<div style = 'text-align:center;'>
-					<button onclick = selectSecretAvatar() style='text-align:center;' id = 'acceptSecretAvatar'> Accept Selection </button>
-			</div>
-			</div>");
+			$resultsUser = mysqli_query($con,"SELECT * FROM secretSanta WHERE idsecretSanta = '$userId' ");
+			while($row = mysqli_fetch_array($resultsUser)){
+				if($row['giftReq'] == 1){
+						print("
+				<div style = 'text-align:center;'>
+						<button onclick = selectSecretAvatar() style='text-align:center;' id = 'acceptSecretAvatar'> Accept Selection </button>
+				</div>");
+				}
+			}
+		
+			
+			print("</div>");
 		}
 		
 ?>
