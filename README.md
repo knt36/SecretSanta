@@ -1,7 +1,16 @@
 
-Secret Santa
+Secret Santa 
 =============================
+[Go to website](http://centralark.org/secretSantas/)
+
+<p align="">
+  <img width="50%" src="/readmeImages/1 (1).png">
+</p>
+
 A website for managing a secret santa event every Christmas. Allows each participant to create a secret profile with a wish list of wanted items. At the deadline, each participant will recieve another person's wish list in accordance to a unique picked algorithm.
+
+
+
 Features
 --------
 
