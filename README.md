@@ -14,7 +14,7 @@ A website for managing a secret santa event every Christmas. Allows each partici
 Features
 --------
 
-* Creating Persona Profiles and Christmas Wish List
+* Creating Personal Profiles and Christmas Wish List
 * Admin Page for participating in event and distributing the wish lists.
 * Different Wish List Distribution Algorithms
 * News Board
