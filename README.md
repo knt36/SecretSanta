@@ -1,7 +1,7 @@
 
 Secret Santa 
 =============================
-[Go to website](http://centralark.org/secretSantas/)
+[Go to website](http://centralark.duckdns.org/secretSantas/)
 
 <p align="center">
   <img width="50%" src="/readmeImages/1.PNG">
